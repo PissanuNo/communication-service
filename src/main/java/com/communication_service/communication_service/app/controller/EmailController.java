@@ -27,7 +27,7 @@ public class EmailController {
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<ResponseBodyModel<String>> auth(@Valid @RequestBody EmailRequest request) throws MessagingException {
+    public ResponseEntity<ResponseBodyModel<String>> sendEmail(@Valid @RequestBody EmailRequest request) throws MessagingException {
         ResponseBodyModel<String> response = emailService.sendEmail(request);
         return ResponseEntity.ok(response);
     }
